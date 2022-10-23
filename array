@@ -16,8 +16,8 @@ int main()
     printf("%s\n",arr2);
     left++;
     right--;
-    Sleep(1000);
-    system("cls");
+    Sleep(1000);//停止1s
+    system("cls");//清楚之前输出的内容
     } 
     return 0;
 }
