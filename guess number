@@ -1,0 +1,84 @@
+#include <stdio.h>
+#include <windows.h>
+#include <stdlib.h>//可用于输出随机数
+#include <time.h>
+void menu()//其实界面
+{
+    printf("********************\n");
+    printf("****** 1.play ******\n");
+    printf("****** 0.exit ******\n");
+    printf("********************\n");
+}
+
+int a;
+
+void enter()//回车后执行下一行命令
+{
+
+    a=getchar();
+    if("a=='\n'")//如果检测到回车，继续
+        printf(" ");
+}
+
+void game()//游戏主体
+{ 
+    int magic;
+    srand((unsigned)time(NULL));
+    magic =rand()%100+1;//将任意的数定义为1~100
+    int guess=0;
+    int counter=0;//计数器
+    while(1)
+    {
+        do
+        {
+            printf("please input your guess:");
+            scanf("%d",&guess);
+            counter++;
+            if(guess>magic)
+            {
+                printf("it's too big\n");
+            }else if (guess<magic)
+            {
+                printf("it's too small\n");
+            }else
+            {
+                printf("right\n");
+                enter();
+                
+            }           
+        } while (guess!=magic);   
+        printf("you guess %d times and the number is %d",counter,guess);
+    }
+}
+
+int main()
+{
+    int input;
+    do
+    { 
+        menu();//进入游戏的界面
+        printf("please choose\n");
+        scanf("%d",&input);
+        printf("\b");
+        switch(input)
+        {
+            case 1:
+                printf("guess number\n");
+                getchar();
+                enter(a);
+                system("cls");
+                game();
+                break;
+            case 0:
+                printf("exit game\n");
+                break;
+            default:
+                printf("choose again\n");
+                break;
+        }
+        getchar();
+        enter(a);     
+        system("cls");      
+    }while(input);
+    return 0;
+}
