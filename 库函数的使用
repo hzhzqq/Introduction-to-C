@@ -1,0 +1,10 @@
+库函数的使用
+
+1、IO函数        printf  scanf  getchar  putchar
+2、字符串操作函数        strcmp  strlen
+3、字符操作函数        toupper
+4、内存操作函数       memcpy  memcmp  memset
+5、时间/日期函数       time
+6、数学函数        sqrt  pow
+7、其他库函数
+
