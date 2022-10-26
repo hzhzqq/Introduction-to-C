@@ -1,0 +1,19 @@
+#include <stdio.h>//依次输出数字
+
+void print(int n)
+{
+    if(n>9)
+    {
+        print(n/10);
+    }
+    printf("%d ",n%10);
+}
+
+int main()
+{
+    int i;
+    scanf("%d",&i);
+    print(i);
+
+    return 0;
+}
